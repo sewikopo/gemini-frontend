@@ -88,10 +88,10 @@ const Cart = () => {
         userId: JSON.parse(localStorage.getItem("user"))._id,
       };
 
-      await api.post("/api/bills/addbills", newObject);
+      await api.post("https://gemini-mern.herokuapp.com/api/bills/addbills", newObject);
 
       newObject.cartItems.map((item) => {
-        api.put('/api/products/updateproducts', {inventory: item.inventory - item.quantity, productId: item._id});
+        api.put('https://gemini-mern.herokuapp.com/api/products/updateproducts', {inventory: item.inventory - item.quantity, productId: item._id});
       });
 
       dispatch({

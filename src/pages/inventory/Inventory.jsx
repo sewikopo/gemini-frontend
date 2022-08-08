@@ -13,7 +13,7 @@ function Inventory() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await api.get("/api/products/getproducts");
+        const response = await api.get("https://gemini-mern.herokuapp.com/api/products/getproducts");
         console.log(response);
         setData(response.data);
       } catch (error) {

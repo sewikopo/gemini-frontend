@@ -16,7 +16,7 @@ const Login = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post('/api/users/login', value).then((res) => {
+      await axios.post('https://gemini-mern.herokuapp.com/api/users/login', value).then((res) => {
         localStorage.setItem("auth", res.data.data.accessToken);
         localStorage.setItem("user", JSON.stringify(res.data.data.user));
         message.success(res.data.message);

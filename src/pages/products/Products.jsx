@@ -19,7 +19,7 @@ const Products = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const {data} = await api.get('/api/products/getproducts');
+      const {data} = await api.get('https://gemini-mern.herokuapp.com/api/products/getproducts');
       setProductData(data);
       dispatch({
         type: "HIDE_LOADING",

@@ -20,7 +20,7 @@ const Bills = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const {data} = await api.get('/api/bills/getbills');
+      const {data} = await api.get('https://gemini-mern.herokuapp.com/api/bills/getbills');
       setBillsData(data);
       dispatch({
         type: "HIDE_LOADING",
