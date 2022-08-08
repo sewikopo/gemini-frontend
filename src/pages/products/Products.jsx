@@ -43,7 +43,7 @@ const Products = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await api.post('/api/products/deleteproducts', {productId:record._id});
+      await api.post('https://gemini-mern.herokuapp.com/api/products/deleteproducts', {productId:record._id});
       message.success("Product Deleted Successfully!")
       getAllProducts();
       setPopModal(false);
@@ -93,7 +93,7 @@ const Products = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        const res = await api.post('/api/products/addproducts', value);
+        const res = await api.post('https://gemini-mern.herokuapp.com/api/products/addproducts', value);
         message.success("Product Added Successfully!")
         getAllProducts();
         setPopModal(false);
@@ -114,7 +114,7 @@ const Products = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-       await api.put('/api/products/updateproducts', {...value, productId:editProduct._id});
+       await api.put('https://gemini-mern.herokuapp.com/api/products/updateproducts', {...value, productId:editProduct._id});
         message.success("Product Updated Successfully!")
         getAllProducts();
         setPopModal(false);

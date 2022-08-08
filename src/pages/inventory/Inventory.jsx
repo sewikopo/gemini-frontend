@@ -56,7 +56,7 @@ function Inventory() {
 
   const handlerSubmit = async (value) => {
     try {
-      await api.put("/api/products/updateproducts", { ...value, productId: stock._id });
+      await api.put("https://gemini-mern.herokuapp.com/api/products/updateproducts", { ...value, productId: stock._id });
       message.success("Data Successfully Edited");
       setEditModal(false);
     } catch (error) {
