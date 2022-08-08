@@ -156,9 +156,9 @@ const Products = () => {
             <FormItem name="price" label="Price">
               <Input/>
             </FormItem>
-            {/* <FormItem name="image" label="Image URL">
-              <Input/>
-            </FormItem> */}
+            <FormItem name="inventory" label="Stock">
+              <Input />
+            </FormItem>
             <div className="form-btn-add">
               <Button htmlType='submit' className='add-new'>Add</Button>
             </div>
