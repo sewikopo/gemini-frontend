@@ -148,17 +148,17 @@ const Products = () => {
             </FormItem>
             <Form.Item name="category" label="Category">
               <Select>
-                <Select.Option value="pizzas">Pizzas</Select.Option>
-                <Select.Option value="burgers">Burgers</Select.Option>
-                <Select.Option value="drinks">Drinks</Select.Option>
+                <Select.Option value="aki">Aki</Select.Option>
+                <Select.Option value="ban">Ban</Select.Option>
+                <Select.Option value="oli">Oli</Select.Option>
               </Select>
             </Form.Item>
             <FormItem name="price" label="Price">
               <Input/>
             </FormItem>
-            <FormItem name="inventory" label="Stock">
+            {/* <FormItem name="inventory" label="Stock">
               <Input />
-            </FormItem>
+            </FormItem> */}
             <div className="form-btn-add">
               <Button htmlType='submit' className='add-new'>Add</Button>
             </div>

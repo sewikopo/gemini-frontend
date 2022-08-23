@@ -133,7 +133,7 @@ const Cart = () => {
               <Select.Option value="andre">andre</Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item name="paymentMethod" label="Payment Method">
+          <Form.Item name="paymentMethod" label="Payment Method"> 
             <Select>
               <Select.Option value="cash">Cash</Select.Option>
               <Select.Option value="paypal">Paypal</Select.Option>
