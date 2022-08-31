@@ -156,7 +156,7 @@ const Products = () => {
             <FormItem name="price" label="Price">
               <Input/>
             </FormItem>
-            {/* <FormItem name="inventory" label="Stock">
+            {/* <FormItem name="stock" label="Stock">
               <Input />
             </FormItem> */}
             <div className="form-btn-add">

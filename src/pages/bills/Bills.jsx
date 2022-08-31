@@ -7,11 +7,13 @@ import { EyeOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import Layout from '../../components/Layout'
 import api from "../../redux/api";
+import LayoutApp from '../../components/Layout';
 
 const Bills = () => {
     const componentRef = useRef();
     const dispatch = useDispatch();
   const [billsData, setBillsData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [popModal, setPopModal] = useState(false);
   const [selectedBill, setSelectedBill] = useState(null);
 
@@ -22,6 +24,7 @@ const Bills = () => {
       });
       const {data} = await api.get('https://gemini-mern.herokuapp.com/api/bills/getbills');
       setBillsData(data);
+      setFilteredData(data);
       dispatch({
         type: "HIDE_LOADING",
       });
@@ -39,7 +42,10 @@ const Bills = () => {
       getAllBills();
   }, []);
 
-  
+  const searchHandler = (e) => {
+    const value = e.target.value.toLowerCase();
+    setFilteredData(billsData.filter((x) => x.licensePlates.toLowerCase().includes(value)));
+  };
 
   const columns = [
     {
@@ -59,14 +65,14 @@ const Bills = () => {
         title: "Type of Service",
         dataIndex: "typeofService",
     },
-    {
-        title: "Sub Total",
-        dataIndex: "subTotal",
-    },
-    {
-        title: "Tax",
-        dataIndex: "tax",
-    },
+    // {
+    //     title: "Sub Total",
+    //     dataIndex: "subTotal",
+    // },
+    // {
+    //     title: "Tax",
+    //     dataIndex: "tax",
+    // },
     {
         title: "Total Amount",
         dataIndex: "totalAmount",
@@ -87,9 +93,12 @@ const Bills = () => {
   });
 
   return (
-    <Layout>
+    <LayoutApp>
         <h2>All Invoice </h2>
-      <Table dataSource={billsData} columns={columns} bordered />
+        <div style={{ marginBottom: 25 }}>
+        <input onChange={(e) => searchHandler(e)} style={{ padding: "0.5rem", paddingRight: "1rem" }} placeholder="Search License Plates..."></input>
+        </div>
+      <Table dataSource={filteredData} columns={columns} bordered />
       
       {
         popModal && 
@@ -158,7 +167,7 @@ const Bills = () => {
         </div>  
         </Modal>
       }
-    </Layout>
+    </LayoutApp>
   )
 }
 

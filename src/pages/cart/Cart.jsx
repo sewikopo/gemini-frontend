@@ -84,7 +84,7 @@ const Cart = () => {
         cartItems,
         subTotal,
         tax: Number(((subTotal / 100) * 10).toFixed(2)),
-        totalAmount: Number((Number(subTotal) + Number(((subTotal / 100) * 10).toFixed(2))).toFixed(2)),
+        totalAmount: Number((Number(subTotal)).toFixed(2)),
         userId: JSON.parse(localStorage.getItem("user"))._id,
       };
 
@@ -128,23 +128,25 @@ const Cart = () => {
           </FormItem>
           <Form.Item name="typeofService" label="Type of Service">
             <Select>
-              <Select.Option value="none">None</Select.Option>
-              <Select.Option value="samsul">Samsul</Select.Option>
-              <Select.Option value="andre">andre</Select.Option>
+              <Select.Option value="-">-</Select.Option>
+              <Select.Option value="Samsul">Samsul</Select.Option>
+              <Select.Option value="Andre">Andre</Select.Option>
+              <Select.Option value="Wawan">Wawan</Select.Option>
+              <Select.Option value="Sugeng">Sugeng</Select.Option>
             </Select>
           </Form.Item>
           <Form.Item name="paymentMethod" label="Payment Method"> 
             <Select>
-              <Select.Option value="cash">Cash</Select.Option>
-              <Select.Option value="paypal">Paypal</Select.Option>
-              <Select.Option value="Card">Card</Select.Option>
+              <Select.Option value="CASH">Cash</Select.Option>
+              <Select.Option value="BCA">BCA</Select.Option>
+              <Select.Option value="MANDIRI">Mandiri</Select.Option>
             </Select>
           </Form.Item>
           <div className="total">
             <span>SubTotal: Rp{subTotal.toFixed(2)}</span>
             <br />
-            <span>Tax: Rp{((subTotal / 100) * 10).toFixed(2)}</span>
-            <h3>Total: Rp{(Number(subTotal) + Number(((subTotal / 100) * 10).toFixed(2))).toFixed(2)}</h3>
+            {/* <span>Tax: Rp{((subTotal / 100) * 10).toFixed(2)}</span> */}
+            <h3>Total: Rp{(Number(subTotal) ).toFixed(2)}</h3>
           </div>
           <div className="form-btn-add">
             <Button htmlType="submit" className="add-new">
