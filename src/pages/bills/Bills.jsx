@@ -53,16 +53,16 @@ const Bills = () => {
         dataIndex: "_id"
     },
     {
-        title: "Customer Name",
+        title: "Kendaraan",
         dataIndex: "customerName",
     }, 
     {
-        title: "License Plates",
+        title: "Plat Nomor",
         dataIndex: "licensePlates",
     }
     , 
     {
-        title: "Type of Service",
+        title: "Servis",
         dataIndex: "typeofService",
     },
     // {
@@ -74,7 +74,7 @@ const Bills = () => {
     //     dataIndex: "tax",
     // },
     {
-        title: "Total Amount",
+        title: "Total",
         dataIndex: "totalAmount",
     },
     {
