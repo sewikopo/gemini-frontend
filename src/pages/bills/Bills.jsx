@@ -102,42 +102,42 @@ const Bills = () => {
       
       {
         popModal && 
-        <Modal title="Invoice Details" width={400} pagination={false} visible={popModal} onCancel={() => setPopModal(false)} footer={false}>
+        <Modal title="Struk Belanja" width={400} pagination={false} visible={popModal} onCancel={() => setPopModal(false)} footer={false}>
           <div className="card" ref={componentRef}>
             <div className="cardHeader">
                 <h2 className="logo">GEMINI MOTOR</h2>
-                <span>Number: <b>+381/0000000</b></span>
-                <span>Address: <b>Jalan Hassanudin 72, Genteng</b></span>
+                <span>Tlp: <b>+0333/0000000</b></span>
+                <span>Alamat: <b>Jalan Hassanudin 72, Genteng</b></span>
             </div>
             <div className="cardBody">
                 <div className="group">
-                    <span>Customer Name:</span>
+                    <span>Kendaraan:</span>
                     <span><b>{selectedBill.customerName}</b></span>
                 </div>
                 <div className="group">
-                    <span>License Plates:</span>
+                    <span>Plat Nomor :</span>
                     <span><b>{selectedBill.licensePlates}</b></span>
                 </div>
                 <div className="group">
-                    <span>Service:</span>
+                    <span>Servis :</span>
                     <span><b>{selectedBill.typeofService}</b></span>
                 </div>
                 <div className="group">
-                    <span>Date Order:</span>
+                    <span>Tanggal Pembelian :</span>
                     <span><b>{selectedBill.createdAt.toString().substring(0, 10)}</b></span>
                 </div>
                 <div className="group">
-                    <span>Total Amount:</span>
+                    <span>Total :</span>
                     <span><b>Rp{selectedBill.totalAmount}</b></span>
                 </div>
             </div>
             <div className="cardFooter">
-                <h4>Your Order</h4>
+                <h4></h4>
                 {selectedBill.cartItems.map((product) => (
                     <>
                         <div className="footerCard">
                             <div className="group">
-                                <span>Product:</span>
+                                <span>Produk:</span>
                                 <span><b>{product.name}</b></span>
                             </div>
                             <div className="group">
@@ -145,7 +145,7 @@ const Bills = () => {
                                 <span><b>{product.quantity}</b></span>
                             </div>
                             <div className="group">
-                                <span>Price:</span>
+                                <span>Harga:</span>
                                 <span><b>Rp{product.price}</b></span>
                             </div>
                         </div>
@@ -158,7 +158,7 @@ const Bills = () => {
                     </div>
                 </div>
                 <div className="footerThanks">
-                    <span>Thank You for buying from us</span>
+                    <span>Terima Kasih Telah Berbelanja</span>
                 </div>
             </div>
           </div>

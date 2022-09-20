@@ -120,13 +120,13 @@ const Cart = () => {
       </div>
       <Modal title="Create Invoice" visible={billPopUp} onCancel={() => setBillPopUp(false)} footer={false}>
         <Form layout="vertical" onFinish={handlerSubmit}>
-          <FormItem name="customerName" label="Customer Name">
+          <FormItem name="customerName" label="Tipe Mobil">
             <Input />
           </FormItem>
-          <FormItem name="licensePlates" label="License Plates">
+          <FormItem name="licensePlates" label="Plat Nomor">
             <Input />
           </FormItem>
-          <Form.Item name="typeofService" label="Type of Service">
+          <Form.Item name="typeofService" label="Servis">
             <Select>
               <Select.Option value="-">-</Select.Option>
               <Select.Option value="Samsul">Samsul</Select.Option>
@@ -135,7 +135,7 @@ const Cart = () => {
               <Select.Option value="Sugeng">Sugeng</Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item name="paymentMethod" label="Payment Method"> 
+          <Form.Item name="paymentMethod" label="Metode Pembayaran"> 
             <Select>
               <Select.Option value="CASH">Cash</Select.Option>
               <Select.Option value="BCA">BCA</Select.Option>
